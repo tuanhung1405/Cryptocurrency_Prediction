@@ -4,7 +4,6 @@ numpy
 matplotlib
 plotly_express==0.4.0
 requests==2.24.0
-yfinance==0.1.54
 altair==4.1.0
 bokeh==2.2.3
 plotly==4.12.0
