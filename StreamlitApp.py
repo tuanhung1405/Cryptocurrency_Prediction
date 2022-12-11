@@ -57,16 +57,16 @@ def main():
     
     # Store the initial value of widgets in session state
 
-col1, col2 = st.columns(2)
+    col1, col2 = st.columns(2)
 
-with col1:
-    coins = st.radio(
+    with col1:
+      coins = st.radio(
         "Choose the period 👉",
         key="visibility",
         options=[tup])
 
-with col2:
-    period = st.selectbox(
+    with col2:
+      period = st.selectbox(
         "How would you like to be contacted?",
         ("DAY", "1WEEK", "2WEEK", "MONTH"))
     
