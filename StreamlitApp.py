@@ -52,7 +52,7 @@ Dữ liệu thu được của *** Nhóm sinh viên UEL *** được lấy từ 
 #with col3:
  #  st.write('   ')
   
-background = Image.open("NGHIÊN CỨU KHOA HỌC (1).png")
+background = Image.open("Nguyễn Tuấn Hưng_ Ảnh chân dung.png")
 col1, col2, col3 = st.columns([0.2, 1, 0.2])
 col2.image(background, use_column_width=True)
     
