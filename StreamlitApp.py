@@ -121,7 +121,7 @@ def main():
     col1, col2, col3 = st.columns([0.5, 1, 0.5])
     with col2:
       period = st.slider("Select the period you want to forecast.", 1, 5, 1)
-      st.write("Press the **Predict button** to show the model and forecast results for you.)
+      st.write("Press the **Predict button** to show the model and forecast results for you.")
       if st.button("START PREDICT"):
         st.warning(model.checkData())
         model.createDataReturn()
