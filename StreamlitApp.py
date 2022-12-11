@@ -109,8 +109,9 @@ def main():
 
     model = ArimaModel(data, period)
 
-    st.text("Now preparing for the prediction. Note that the prediction below uses the Arima model as a reference. You should not apply it to your investment and the author will not bear any associated liability.")
-    period = st.slider("Chose period you want to predict", 1, 5, 1)
+    st.write("Now preparing for the prediction. Note that the prediction below uses the Arima model as a reference. You should not apply it to your investment and the author will not bear any associated liability.")
+    period = st.slider("Select the period you want to forecast and press the **Predict button**", 1, 5, 1)
+    st.write("The app will return the model and forecast results for you:")
     if st.button("START PREDICT"):
         st.warning(model.checkData())
         model.createDataReturn()
@@ -144,5 +145,13 @@ def main():
         st.plotly_chart(fig2)
 
 
+        
+st.markdown("This is a project of **Nguyen Tuan Hung** from **UEL** that aims to build a web application to forecast the trend of coin prices using the Arima model - a fairly famous model in time series forecasting.")
+st.write("The data was crawled from API of Coinbase (https://api.pro.coinbase.com). You can use the model however you want, but you carry the risk for your actions.") 
+
+background = Image.open("Nguyễn Tuấn Hưng_ Ảnh chân dung.png")
+col1, col2, col3 = st.columns([0.7, 1, 0.7])
+col2.image(background, use_column_width=True)
+        
 if __name__ == '__main__':
     main()
