@@ -40,11 +40,11 @@ div.fullScreenFrame > div {
 original_title = '<p style="text-align: center; color:#3498DB; text-shadow: 2px 2px 4px #000000; font-size: 60px;">Crypto-Currency Price Prediction using Machine Learning</p>'
 st.markdown(original_title, unsafe_allow_html=True)
 
-st.subheader("This is project of Nguyễn Tuấn Hưng from UEL")
-st.text("**You can use the model however you want, but you carry the risk for your actions.**")
+st.subheader("This is a project of Nguyen Tuan Hung from UEL that aims to build a web application to forecast the trend of coin prices using the Arima model - a fairly famous model in time series forecasting")
+st.write("The data was crawled from API of Coinbase (url: https://api.pro.coinbase.com). You can use the model however you want, but you carry the risk for your actions.") 
 
 background = Image.open("Nguyễn Tuấn Hưng_ Ảnh chân dung.png")
-col1, col2, col3 = st.columns([0.6, 1, 0.6])
+col1, col2, col3 = st.columns([0.7, 1, 0.7])
 col2.image(background, use_column_width=True)
     
 st.write('---')
@@ -114,7 +114,6 @@ def main():
     model = ArimaModel(data, period)
 
     st.write("Now prepare for the prediction, note that the prediction below uses the Arima model as a reference. You should not apply it to your portfolio and the author will not bear any associated liability.")
-    st.write("HAVE FUN and wish success")
     period = st.slider("Chose period you want to predict", 1, 5, 1)
     if st.button("START PREDICT"):
         st.warning(model.checkData())
