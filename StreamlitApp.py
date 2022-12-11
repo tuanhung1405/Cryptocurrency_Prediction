@@ -109,7 +109,7 @@ def main():
 
     model = ArimaModel(data, period)
 
-    st.write("Now prepare for the prediction, note that the prediction below uses the Arima model as a reference. You should not apply it to your portfolio and the author will not bear any associated liability.")
+    st.text("Now preparing for the prediction. Note that the prediction below uses the Arima model as a reference. You should not apply it to your investment and the author will not bear any associated liability.")
     period = st.slider("Chose period you want to predict", 1, 5, 1)
     if st.button("START PREDICT"):
         st.warning(model.checkData())
