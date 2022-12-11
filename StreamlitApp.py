@@ -119,7 +119,7 @@ def main():
     model = ArimaModel(data, period)
     
     st.write('---')
-    st.write("Now preparing for the prediction. Please note that the prediction below uses the Arima model as a reference.")
+    st.write("Let's choose the period for the prediction. Please note that the below prediction uses the Arima model as a reference.")
     
     col1, col2, col3 = st.columns([0.5, 1, 0.5])
     with col2:
