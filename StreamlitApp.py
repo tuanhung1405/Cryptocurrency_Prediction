@@ -122,38 +122,38 @@ def main():
     with col2:
       period = st.slider("Select the period you want to forecast.", 1, 5, 1)
       st.write("Press the **START PREDICTION** button to show the model and forecast results.")
-      if st.button("START PREDICTION"):
-        st.warning(model.checkData())
-        model.createDataReturn()
-        st.write("Stationality test")
-        warn, ADF, p_value = model.checkStationarity()
-        s1 = "ADF Statistic: " + str(ADF)
-        s2 = "p-value: " + str(p_value)
-        st.text(s1)
-        st.text(s2)
-        st.warning(warn)
+    if st.button("START PREDICTION"):
+      st.warning(model.checkData())
+      model.createDataReturn()
+      st.write("Stationality test")
+      warn, ADF, p_value = model.checkStationarity()
+      s1 = "ADF Statistic: " + str(ADF)
+      s2 = "p-value: " + str(p_value)
+      st.text(s1)
+      st.text(s2)
+      st.warning(warn)
 
-        st.markdown("**_Running the auto_arima can take a while. Please wait!!!_**")
+      st.markdown("**_Running the auto_arima can take a while. Please wait!!!_**")
 
-        result = model.displaySummary()
+      result = model.displaySummary()
 
-        old_stdout = sys.stdout
-        sys.stdout = mystdout = StringIO()
-        with st.expander("Summary SARIMAX Results:"):
+      old_stdout = sys.stdout
+      sys.stdout = mystdout = StringIO()
+      with st.expander("Summary SARIMAX Results:"):
             print(result.summary())
-        sys.stdout = old_stdout
-        st.text(mystdout.getvalue())
+      sys.stdout = old_stdout
+      st.text(mystdout.getvalue())
 
-        pre = model.predict(period)
-        st.write("The data predict")
-        st.dataframe(pre)
+      pre = model.predict(period)
+      st.write("The data predict")
+      st.dataframe(pre)
 
-        fig2 = px.line(data, y="close", x=data.index)
-        fig2.add_trace(
+      fig2 = px.line(data, y="close", x=data.index)
+      fig2.add_trace(
             go.Scatter(x=pre.index, y=pre['Price_mean'], line=dict(color="red"), name="forecast"))
-        fig2.add_trace(go.Scatter(x=pre.index, y=pre['Price_upper'], line=dict(color="green", dash='dash'), name="upper", ))
-        fig2.add_trace(go.Scatter(x=pre.index, y=pre['Price_lower'], line=dict(color="green", dash='dash'), name="lower", ))
-        st.plotly_chart(fig2)
+      fig2.add_trace(go.Scatter(x=pre.index, y=pre['Price_upper'], line=dict(color="green", dash='dash'), name="upper", ))
+      fig2.add_trace(go.Scatter(x=pre.index, y=pre['Price_lower'], line=dict(color="green", dash='dash'), name="lower", ))
+      st.plotly_chart(fig2)
 
 #background = Image.open("Nguyễn Tuấn Hưng_ Ảnh chân dung.png")
 #col1, col2, col3 = st.columns([0.7, 1, 0.7])
