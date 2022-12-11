@@ -135,7 +135,7 @@ def main():
       st.warning(warn)
 
       st.markdown("**_Running the auto_arima can take a while. Please wait!!!_**")
-      with st.expander("Summary SARIMAX Results:"):
+      with st.expander("Summary SARIMAX Results"):
           result = model.displaySummary()
 
           old_stdout = sys.stdout
@@ -149,7 +149,7 @@ def main():
       col1, col2 = st.columns(2)
 
       with col1:
-        st.write("The data predict")
+        st.write("Results of prediction:")
         st.dataframe(pre)
 
       with col2:
