@@ -37,7 +37,7 @@ div.fullScreenFrame > div {
 </style>""", unsafe_allow_html=True)
 
 #Title
-original_title = '<p style="text-align: center; color:#3498DB; text-shadow: 2px 2px 4px #000000; font-size: 60px;">Crypto-Currency Price Prediction using ML</p>'
+original_title = '<p style="text-align: center; color:#3498DB; text-shadow: 2px 2px 4px #000000; font-size: 60px;">Crypto-Currency Price Prediction using ARIMA Model</p>'
 st.markdown(original_title, unsafe_allow_html=True)
 
 st.markdown("This is a project of **Nguyen Tuan Hung** from **UEL** that aims to build a web application to forecast the trend of coin prices using the Arima model - a fairly famous model in time series forecasting.")
