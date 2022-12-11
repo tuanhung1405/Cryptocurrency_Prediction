@@ -121,7 +121,8 @@ def main():
     col1, col2, col3 = st.columns([0.5, 1, 0.5])
     with col2:
       period = st.slider("Select the period you want to forecast.", 1, 5, 1)
-      st.write("Press the **START PREDICTION** button to show the model and forecast results.")
+    st.write("Press the **START PREDICTION** button to show the model and forecast results.")
+    
     if st.button("START PREDICTION"):
       st.warning(model.checkData())
       model.createDataReturn()
@@ -134,17 +135,16 @@ def main():
       st.warning(warn)
 
       st.markdown("**_Running the auto_arima can take a while. Please wait!!!_**")
-
-      result = model.displaySummary()
-
-      old_stdout = sys.stdout
-      sys.stdout = mystdout = StringIO()
       with st.expander("Summary SARIMAX Results:"):
-            print(result.summary())
-      sys.stdout = old_stdout
-      st.text(mystdout.getvalue())
+          result = model.displaySummary()
 
-      pre = model.predict(period)
+          old_stdout = sys.stdout
+          sys.stdout = mystdout = StringIO()
+          print(result.summary())
+          sys.stdout = old_stdout
+          st.text(mystdout.getvalue())
+
+          pre = model.predict(period)
       st.write("The data predict")
       st.dataframe(pre)
 
