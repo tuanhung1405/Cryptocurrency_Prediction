@@ -1,5 +1,6 @@
 streamlit
 matplotlib
+pandas
 plotly_express
 requests==2.24.0
 altair==4.1.0
@@ -7,5 +8,5 @@ bokeh==2.2.3
 plotly
 ta
 pmdarima
-pandas
+
 
