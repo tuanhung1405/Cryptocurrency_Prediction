@@ -37,23 +37,14 @@ div.fullScreenFrame > div {
 </style>""", unsafe_allow_html=True)
 
 #Title
-original_title = '<p style="text-align: center; color:#3498DB; text-shadow: 2px 2px 4px #000000; font-size: 60px;">Dự Đoán Khả Năng Chịu Đựng Rủi Ro</p>'
+original_title = '<p style="text-align: center; color:#3498DB; text-shadow: 2px 2px 4px #000000; font-size: 60px;">CRYPTOCURRENCY PRICE PREDICTION USING ARIMA MODEL</p>'
 st.markdown(original_title, unsafe_allow_html=True)
 
 st.write("""Trang web này sử dụng mô hình Machine Learning để dự đoán điểm ** Khả năng chịu rủi ro **!
 Dữ liệu thu được của *** Nhóm sinh viên UEL *** được lấy từ một cuộc khảo sát với hơn 500 người tham gia tại Thành phố Hồ Chí Minh.""")
 
-#col1, col2, col3 = st.columns(3)
-#with col1:
- #   st.write(' ')
-#with col2:
-#    image = Image.open('NGHIÊN CỨU KHOA HỌC (1).png')
- #   st.image(image, caption='Members of Group 35')
-#with col3:
- #  st.write('   ')
-  
 background = Image.open("Nguyễn Tuấn Hưng_ Ảnh chân dung.png")
-col1, col2, col3 = st.columns([0.2, 1, 0.2])
+col1, col2, col3 = st.columns([0.5, 1, 0.5])
 col2.image(background, use_column_width=True)
     
 st.write('---')
