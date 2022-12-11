@@ -117,7 +117,13 @@ def main():
     
     st.write('---')
     st.write("Now preparing for the prediction. Note that the prediction below uses the Arima model as a reference. You should not apply it to your investment and the author will not bear any associated liability.")
-    period = st.slider("Select the period you want to forecast and press the **Predict button**", 1, 5, 1)
+    
+    col3, col4 = st.columns(2)
+
+    with col3:
+      period = st.slider("Select the period you want to forecast and press the **Predict button**", 1, 5, 1)
+
+    with col4:
     if st.button("START PREDICT"):
         st.warning(model.checkData())
         model.createDataReturn()
