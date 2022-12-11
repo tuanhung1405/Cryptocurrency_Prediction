@@ -37,14 +37,14 @@ div.fullScreenFrame > div {
 </style>""", unsafe_allow_html=True)
 
 #Title
-original_title = '<p style="text-align: center; color:#3498DB; text-shadow: 2px 2px 4px #000000; font-size: 60px;">CRYPTOCURRENCY PRICE PREDICTION USING ARIMA MODEL</p>'
+original_title = '<p style="text-align: center; color:#3498DB; text-shadow: 2px 2px 4px #000000; font-size: 60px;">Crypto-Currency Price Prediction using Machine Learning</p>'
 st.markdown(original_title, unsafe_allow_html=True)
 
-st.write("""Trang web này sử dụng mô hình Machine Learning để dự đoán điểm ** Khả năng chịu rủi ro **!
-Dữ liệu thu được của *** Nhóm sinh viên UEL *** được lấy từ một cuộc khảo sát với hơn 500 người tham gia tại Thành phố Hồ Chí Minh.""")
+st.subheader("This is project of Nguyễn Tuấn Hưng from UEL")
+st.text("**You can use the model however you want, but you carry the risk for your actions.**")
 
 background = Image.open("Nguyễn Tuấn Hưng_ Ảnh chân dung.png")
-col1, col2, col3 = st.columns([0.5, 1, 0.5])
+col1, col2, col3 = st.columns([0.6, 1, 0.6])
 col2.image(background, use_column_width=True)
     
 st.write('---')
@@ -52,11 +52,9 @@ tup, coinname = ApiGetData.getListCoins()
 
 
 def main():
-
-    st.title("CRYPTOCURRENCY PRICE PREDICTION USING ARIMA MODEL")
+  
     st.subheader("This is project of Nguyễn Tuấn Hưng from UEL")
     st.text("Data are crawled from coinbase ")
-    st.write("!!!! Enjoy and have a good day !!!!")
 
     st.sidebar.write("Choose your coin and the period")
     coins = st.sidebar.selectbox("Which coin", (tup))
