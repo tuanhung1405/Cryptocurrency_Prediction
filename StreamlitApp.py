@@ -118,12 +118,9 @@ def main():
     st.write('---')
     st.write("Now preparing for the prediction. Note that the prediction below uses the Arima model as a reference. You should not apply it to your investment and the author will not bear any associated liability.")
     
-    col3, col4 = st.columns(2)
-
-    with col3:
-      period = st.slider("Select the period you want to forecast and press the **Predict button**", 1, 5, 1)
-
-    with col4:
+    col1, col2, col3 = st.columns([0.2, 1, 0.2])
+    with col2:
+     period = st.slider("Select the period you want to forecast and press the **Predict button**. The app will return the model and forecast results for you.", 1, 5, 1)
       if st.button("START PREDICT"):
         st.warning(model.checkData())
         model.createDataReturn()
@@ -155,7 +152,6 @@ def main():
         fig2.add_trace(go.Scatter(x=pre.index, y=pre['Price_upper'], line=dict(color="green", dash='dash'), name="upper", ))
         fig2.add_trace(go.Scatter(x=pre.index, y=pre['Price_lower'], line=dict(color="green", dash='dash'), name="lower", ))
         st.plotly_chart(fig2)
-    st.write("The app will return the model and forecast results for you:")
 
 #background = Image.open("Nguyễn Tuấn Hưng_ Ảnh chân dung.png")
 #col1, col2, col3 = st.columns([0.7, 1, 0.7])
