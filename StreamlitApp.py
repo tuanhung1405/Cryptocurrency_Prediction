@@ -135,12 +135,12 @@ def main():
 
         st.markdown("**_Running the auto_arima can take a while. Please wait!!!_**")
 
-        with st.expander("Summary SARIMAX Results:"):
-          result = model.displaySummary()
+        result = model.displaySummary()
 
         old_stdout = sys.stdout
         sys.stdout = mystdout = StringIO()
-        print(result.summary())
+        with st.expander("Summary SARIMAX Results:"):
+            print(result.summary())
         sys.stdout = old_stdout
         st.text(mystdout.getvalue())
 
