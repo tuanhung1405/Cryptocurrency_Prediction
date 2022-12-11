@@ -45,10 +45,32 @@ tup, coinname = ApiGetData.getListCoins()
 
 
 def main():
-    st.sidebar.write("Choose your coin and the period")
-    coins = st.sidebar.selectbox("Which coin", (tup))
-    period = st.sidebar.selectbox("Choose the period", ("DAY", "1WEEK", "2WEEK", "MONTH"))
+    #st.sidebar.write("Choose your coin and the period")
+    #coins = st.sidebar.selectbox("Which coin", (tup))
+    #period = st.sidebar.selectbox("Choose the period", ("DAY", "1WEEK", "2WEEK", "MONTH"))
+    
+    
+    
+    
+    
+    
+    
+    # Store the initial value of widgets in session state
 
+col1, col2 = st.columns(2)
+
+with col1:
+    coins = st.radio(
+        "Choose the period 👉",
+        key="visibility",
+        options=[tup])
+
+with col2:
+    period = st.selectbox(
+        "How would you like to be contacted?",
+        ("DAY", "1WEEK", "2WEEK", "MONTH"))
+    
+    
     name = "Coin: " + coinname.get(coins)
     st.subheader(name)
     data = ApiGetData.getFinalData(coins, period)
@@ -148,7 +170,3 @@ st.write("The data was crawled from API of Coinbase (https://api.pro.coinbase.co
         
 if __name__ == '__main__':
     main()
-    
-background = Image.open("Nguyễn Tuấn Hưng_ Ảnh chân dung.png")
-col1, col2, col3 = st.columns([0.7, 1, 0.7])
-col2.image(background, use_column_width=True)
