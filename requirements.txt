@@ -1,6 +1,3 @@
-streamlit
-pandas
-numpy
 matplotlib
 plotly_express
 requests==2.24.0
@@ -9,3 +6,13 @@ bokeh==2.2.3
 plotly
 ta
 pmdarima
+streamlit==1.3.0
+pandas==0.25.3
+base58==2.0.0
+pickleshare==0.7.5
+numpy==1.18.1
+click<=8.0.4
+sklearn==0.0
+streamlit_lottie==0.0.2
+requests==2.24.0
+Pillow==8.4.0
