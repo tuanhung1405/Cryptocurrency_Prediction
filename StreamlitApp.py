@@ -49,12 +49,6 @@ def main():
     #coins = st.sidebar.selectbox("Which coin", (tup))
     #period = st.sidebar.selectbox("Choose the period", ("DAY", "1WEEK", "2WEEK", "MONTH"))
     
-    
-    
-    
-    
-    
-    
     # Store the initial value of widgets in session state
 
     col1, col2 = st.columns(2)
@@ -123,7 +117,6 @@ def main():
 
     st.write("Now preparing for the prediction. Note that the prediction below uses the Arima model as a reference. You should not apply it to your investment and the author will not bear any associated liability.")
     period = st.slider("Select the period you want to forecast and press the **Predict button**", 1, 5, 1)
-    st.write("The app will return the model and forecast results for you:")
     if st.button("START PREDICT"):
         st.warning(model.checkData())
         model.createDataReturn()
@@ -155,11 +148,7 @@ def main():
         fig2.add_trace(go.Scatter(x=pre.index, y=pre['Price_upper'], line=dict(color="green", dash='dash'), name="upper", ))
         fig2.add_trace(go.Scatter(x=pre.index, y=pre['Price_lower'], line=dict(color="green", dash='dash'), name="lower", ))
         st.plotly_chart(fig2)
-
-
-        
-st.markdown("This is a project of **Nguyen Tuan Hung** from **UEL** that aims to build a web application to forecast the trend of coin prices using the Arima model - a fairly famous model in time series forecasting.")
-st.write("The data was crawled from API of Coinbase (https://api.pro.coinbase.com). You can use the model however you want, but you carry the risk for your actions.") 
+    st.write("The app will return the model and forecast results for you:")
 
 #background = Image.open("Nguyễn Tuấn Hưng_ Ảnh chân dung.png")
 #col1, col2, col3 = st.columns([0.7, 1, 0.7])
