@@ -8,3 +8,4 @@ altair==4.1.0
 bokeh==2.2.3
 plotly
 ta
+pmdarima
