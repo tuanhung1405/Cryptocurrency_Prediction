@@ -124,7 +124,7 @@ def main():
       period = st.slider("Select the period you want to forecast and press the **Predict button**", 1, 5, 1)
 
     with col4:
-    if st.button("START PREDICT"):
+      if st.button("START PREDICT"):
         st.warning(model.checkData())
         model.createDataReturn()
         st.write("Stationality test")
