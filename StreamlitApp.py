@@ -40,8 +40,8 @@ div.fullScreenFrame > div {
 original_title = '<p style="text-align: center; color:#3498DB; text-shadow: 2px 2px 4px #000000; font-size: 60px;">Crypto-Currency Price Prediction using Machine Learning</p>'
 st.markdown(original_title, unsafe_allow_html=True)
 
-st.subheader("This is a project of Nguyen Tuan Hung from UEL that aims to build a web application to forecast the trend of coin prices using the Arima model - a fairly famous model in time series forecasting")
-st.write("The data was crawled from API of Coinbase (url: https://api.pro.coinbase.com). You can use the model however you want, but you carry the risk for your actions.") 
+st.caption("This is a project of Nguyen Tuan Hung from UEL that aims to build a web application to forecast the trend of coin prices using the Arima model - a fairly famous model in time series forecasting")
+st.write("The data was crawled from API of Coinbase (https://api.pro.coinbase.com). **You can use the model however you want, but you carry the risk for your actions**.") 
 
 background = Image.open("Nguyễn Tuấn Hưng_ Ảnh chân dung.png")
 col1, col2, col3 = st.columns([0.7, 1, 0.7])
@@ -52,10 +52,6 @@ tup, coinname = ApiGetData.getListCoins()
 
 
 def main():
-  
-    st.subheader("This is project of Nguyễn Tuấn Hưng from UEL")
-    st.text("Data are crawled from coinbase ")
-
     st.sidebar.write("Choose your coin and the period")
     coins = st.sidebar.selectbox("Which coin", (tup))
     period = st.sidebar.selectbox("Choose the period", ("DAY", "1WEEK", "2WEEK", "MONTH"))
