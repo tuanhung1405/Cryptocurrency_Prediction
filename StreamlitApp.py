@@ -118,7 +118,7 @@ def main():
     st.write('---')
     st.write("Now preparing for the prediction. Note that the prediction below uses the Arima model as a reference. You should not apply it to your investment and the author will not bear any associated liability.")
     
-    col1, col2, col3 = st.columns([0.2, 1, 0.2])
+    col1, col2, col3 = st.columns([0.5, 1, 0.5])
     with col2:
       period = st.slider("Select the period you want to forecast and press the **Predict button**. The app will return the model and forecast results for you.", 1, 5, 1)
       if st.button("START PREDICT"):
