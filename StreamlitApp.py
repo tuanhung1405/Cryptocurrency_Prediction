@@ -60,10 +60,7 @@ def main():
     col1, col2 = st.columns(2)
 
     with col1:
-      coins = st.radio(
-        "Choose the period 👉",
-        key="visibility",
-        options=[tup])
+      coins = st.selectbox("Which coin", (tup))
 
     with col2:
       period = st.selectbox(
