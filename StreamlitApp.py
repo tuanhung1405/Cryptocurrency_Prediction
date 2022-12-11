@@ -39,7 +39,10 @@ div.fullScreenFrame > div {
 #Title
 original_title = '<p style="text-align: center; color:#3498DB; text-shadow: 2px 2px 4px #000000; font-size: 60px;">Crypto-Currency Price Prediction using ARIMA Model</p>'
 st.markdown(original_title, unsafe_allow_html=True)
-    
+
+
+st.markdown("This is a project of **Nguyen Tuan Hung** from **UEL** that aims to build a web application to forecast the trend of coin prices using the ARIMA model. The data was crawled from API of Coinbase. You can use the model however you want, but you carry the risk for your actions.")
+
 st.write('---')
 tup, coinname = ApiGetData.getListCoins()
 
@@ -116,7 +119,7 @@ def main():
     model = ArimaModel(data, period)
     
     st.write('---')
-    st.write("Now preparing for the prediction. Note that the prediction below uses the Arima model as a reference. You should not apply it to your investment and the author will not bear any associated liability.")
+    st.write("Now preparing for the prediction. Please note that the prediction below uses the Arima model as a reference.")
     
     col1, col2, col3 = st.columns([0.5, 1, 0.5])
     with col2:
