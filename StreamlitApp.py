@@ -50,6 +50,7 @@ def main():
     #period = st.sidebar.selectbox("Choose the period", ("DAY", "1WEEK", "2WEEK", "MONTH"))
     
     # Store the initial value of widgets in session state
+    st.header('Choose your coin and period you want')
 
     col1, col2 = st.columns(2)
 
@@ -58,10 +59,10 @@ def main():
 
     with col2:
       period = st.selectbox(
-        "How would you like to be contacted?",
+        "Choose the period",
         ("DAY", "1WEEK", "2WEEK", "MONTH"))
     
-    
+    st.write("View the data and graph")
     name = "Coin: " + coinname.get(coins)
     st.subheader(name)
     data = ApiGetData.getFinalData(coins, period)
@@ -114,7 +115,8 @@ def main():
     st.plotly_chart(fig)
 
     model = ArimaModel(data, period)
-
+    
+    st.write('---')
     st.write("Now preparing for the prediction. Note that the prediction below uses the Arima model as a reference. You should not apply it to your investment and the author will not bear any associated liability.")
     period = st.slider("Select the period you want to forecast and press the **Predict button**", 1, 5, 1)
     if st.button("START PREDICT"):
