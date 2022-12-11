@@ -7,7 +7,56 @@ from ArimaModel import ArimaModel
 from io import StringIO
 import sys
 import plotly.express as px
+from PIL import Image
 
+st.set_page_config(page_title='Cryptocurrency Price Prediction',page_icon="📶",layout="wide")
+
+st.markdown('<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">', unsafe_allow_html=True)
+
+st.markdown("""
+<nav class="navbar fixed-top navbar-expand-lg navbar-dark" style="background-color: #3498DB;">
+  <a class="navbar-brand" href="https://www.uel.edu.vn" target="_blank">
+  <img class="image-25"src="https://www.uel.edu.vn/Resources/Images/SubDomain/HomePage/Style/logo_uel.png" width="350"
+  </a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+      </li>
+    </ul>
+  </div>
+</nav>
+""", unsafe_allow_html=True)
+
+h = st.markdown("""
+<style>
+div.fullScreenFrame > div {
+    display: flex;
+    justify-content: center;
+}
+</style>""", unsafe_allow_html=True)
+
+#Title
+original_title = '<p style="text-align: center; color:#3498DB; text-shadow: 2px 2px 4px #000000; font-size: 60px;">Dự Đoán Khả Năng Chịu Đựng Rủi Ro</p>'
+st.markdown(original_title, unsafe_allow_html=True)
+
+st.write("""Trang web này sử dụng mô hình Machine Learning để dự đoán điểm ** Khả năng chịu rủi ro **!
+Dữ liệu thu được của *** Nhóm sinh viên UEL *** được lấy từ một cuộc khảo sát với hơn 500 người tham gia tại Thành phố Hồ Chí Minh.""")
+
+#col1, col2, col3 = st.columns(3)
+#with col1:
+ #   st.write(' ')
+#with col2:
+#    image = Image.open('NGHIÊN CỨU KHOA HỌC (1).png')
+ #   st.image(image, caption='Members of Group 35')
+#with col3:
+ #  st.write('   ')
+  
+background = Image.open("NGHIÊN CỨU KHOA HỌC (1).png")
+col1, col2, col3 = st.columns([0.2, 1, 0.2])
+col2.image(background, use_column_width=True)
+    
+st.write('---')
 tup, coinname = ApiGetData.getListCoins()
 
 
