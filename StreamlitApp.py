@@ -135,7 +135,7 @@ def main():
     with col1:
         period = st.slider("Select the period you want to forecast.", 1, 5, 1)
     with col2:
-        st.markdown('---')
+        st.markdown(' ')
 
  
     st.write("Press the **START PREDICTION** button to show the model and forecast results.")
