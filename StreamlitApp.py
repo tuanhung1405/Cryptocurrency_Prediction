@@ -78,57 +78,57 @@ def main():
     col1, col2 = st.columns(2)
 
     with col1:
-       st.expander("Data"): 
-       name = "Coin: " + coinname.get(coins)
-       st.subheader(name)
-       data = ApiGetData.getFinalData(coins, period)
-       st.dataframe(data)
+       with st.expander("Data"): 
+            name = "Coin: " + coinname.get(coins)
+            st.subheader(name)
+            data = ApiGetData.getFinalData(coins, period)
+            st.dataframe(data)
 
     with col2:
-       st.expander("Graph"): 
-       data["MA20"] = ta.trend.sma_indicator(data['close'], window=20)
-       data["MA50"] = ta.trend.sma_indicator(data['close'], window=50)
-       data["MA100"] = ta.trend.sma_indicator(data['close'], window=100)
+       with st.expander("Graph"): 
+            data["MA20"] = ta.trend.sma_indicator(data['close'], window=20)
+            data["MA50"] = ta.trend.sma_indicator(data['close'], window=50)
+            data["MA100"] = ta.trend.sma_indicator(data['close'], window=100)
 
-       fig = make_subplots(rows=2, cols=1, shared_xaxes=True,
+            fig = make_subplots(rows=2, cols=1, shared_xaxes=True,
                         vertical_spacing=0.03,
                         row_width=[0.2, 0.7])
 
     # Plot OHLC on 1st row
-       fig.add_trace(go.Candlestick(x=data.index,
+            fig.add_trace(go.Candlestick(x=data.index,
                                  open=data['open'],
                                  high=data['high'],
                                  low=data['low'],
                                  close=data['close'], name="OHLC"),
                   row=1, col=1)
-       fig.add_trace(go.Line(x=data.index, y=data['MA20'], name="MA20", line=dict(
-        color="purple",
-        width=1)))
-       fig.add_trace(go.Line(x=data.index, y=data['MA50'], name="MA50", line=dict(
-        color="yellow",
-        width=1.5)))
-       fig.add_trace(go.Line(x=data.index, y=data['MA100'], name="MA100", line=dict(
-        color="orange",
-        width=2)))
+            fig.add_trace(go.Line(x=data.index, y=data['MA20'], name="MA20", line=dict(
+            color="purple",
+            width=1)))
+            fig.add_trace(go.Line(x=data.index, y=data['MA50'], name="MA50", line=dict(
+            color="yellow",
+            width=1.5)))
+            fig.add_trace(go.Line(x=data.index, y=data['MA100'], name="MA100", line=dict(
+            color="orange",
+            width=2)))
 
     # Bar trace for volumes on 2nd row without legend
-       fig.add_trace(go.Bar(x=data.index, y=data['volume'], showlegend=False), row=2, col=1)
+            fig.add_trace(go.Bar(x=data.index, y=data['volume'], showlegend=False), row=2, col=1)
 
     # Do not show OHLC's rangeslider plot
-       fig.update(layout_xaxis_rangeslider_visible=False)
+            fig.update(layout_xaxis_rangeslider_visible=False)
 
-       fig.update_layout(
-        autosize=False,
-        width=780,
-        height=540,
-        margin=dict(
+            fig.update_layout(
+            autosize=False,
+            width=780,
+            height=540,
+            margin=dict(
             l=50,
             r=50,
             b=50,
             t=50,
             pad=4))
 
-       st.plotly_chart(fig)
+            st.plotly_chart(fig)
 
     model = ArimaModel(data, period)
     
