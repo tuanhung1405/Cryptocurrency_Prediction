@@ -75,12 +75,17 @@ def main():
         ("DAY", "1WEEK", "2WEEK", "MONTH"))
     
     st.write("View the data and graph")
-    with st.expander("Data"): 
+    col1, col2 = st.columns(2)
+
+    with col1:
+       st.expander("Data"): 
        name = "Coin: " + coinname.get(coins)
        st.subheader(name)
        data = ApiGetData.getFinalData(coins, period)
        st.dataframe(data)
-    with st.expander("Graph"): 
+
+    with col2:
+       st.expander("Graph"): 
        data["MA20"] = ta.trend.sma_indicator(data['close'], window=20)
        data["MA50"] = ta.trend.sma_indicator(data['close'], window=50)
        data["MA100"] = ta.trend.sma_indicator(data['close'], window=100)
