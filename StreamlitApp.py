@@ -130,9 +130,12 @@ def main():
     st.write('---')
     st.write("Let's choose the period for the prediction. Please note that the below prediction uses the Arima model as a reference.")
     
-    col1, col2, col3 = st.columns([0.7, 1, 0.7])
-    with col2:
+    col1, col2 = st.columns(2)
+
+    with col1:
       period = st.slider("Select the period you want to forecast.", 1, 5, 1)
+
+ 
     st.write("Press the **START PREDICTION** button to show the model and forecast results.")
     
     if st.button("START PREDICTION"):
