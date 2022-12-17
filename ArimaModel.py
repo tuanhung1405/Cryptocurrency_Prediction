@@ -36,7 +36,7 @@ class ArimaModel:
         maxday = self.data.index.max()
         minday = self.data.index.min()
         if maxday - minday <= timedelta(days=730):
-            warn = "This coin is quite new, the data less than two year, so the model is not reliable enough"
+            warn = "This coin is quite new. The data it creates is less than 2 years, so the model is not reliable enough"
         else:
             warn = "The length of data is oke"
         return warn
