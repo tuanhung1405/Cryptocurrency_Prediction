@@ -55,7 +55,7 @@ st.markdown("This is a project of **Nguyen Tuan Hung** from **UEL** that aims to
 st.markdown("You can find the presentation report below. In addition, this is the github link that contains full codes for the project:")
 st.mardown("https://github.com/tuanhung1405/Cryptocurrency_Prediction.git", unsafe_allow_html=True)
 st.mardown("Presentation report: ")
-st.mardown("https://drive.google.com/file/d/1hMAIYuiOCLQako7ToSGypWbhN7lH0nh9/view?usp=sharing", unsafe_allow_html=True")
+st.mardown("https://drive.google.com/file/d/1hMAIYuiOCLQako7ToSGypWbhN7lH0nh9/view?usp=sharing", unsafe_allow_html=True)
 st.write('---')
 ####################################################################
 tup, coinname = ApiGetData.getListCoins()
